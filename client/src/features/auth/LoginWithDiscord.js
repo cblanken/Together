@@ -1,8 +1,8 @@
 import React from "react";
-import { useAuthContext } from "contexts/AuthContext";
+import useAuth from "contexts/AuthContext";
 
 const LoginWithDiscord = ({ DiscordIcon }) => {
-  const auth = useAuthContext();
+  const auth = useAuth();
 
   // If user is not authenticated; Render login button
   if (!auth.isAuthenticated()) {

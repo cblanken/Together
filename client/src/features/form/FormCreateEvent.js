@@ -1,9 +1,9 @@
 import React from "react";
 import { useFormContext } from "contexts/FormContext";
-import { useAuthContext } from "contexts/AuthContext";
+import useAuth from "contexts/AuthContext";
 
 export default function FormCreateEvent() {
-  const auth = useAuthContext();
+  const auth = useAuth();
   const { formData, setFormData, formCreateEventErrors } = useFormContext();
 
   // This updates the form data's in the context

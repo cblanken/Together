@@ -1,28 +1,33 @@
 import { useState, useEffect } from "react";
 import DataService from "services/dataService";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 // Everything related to the user context will be inside of here: (CRUD)
 // Allow us to check and modify any methods/functions in one place.
 
-const useProvideAuth = () => {
+const useAuth = () => {
   const [user, setUser] = useState(null);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   // Check if there is already a user session
   useEffect(() => {
     // If so, save user's information to the context
     DataService.getCurrentUser().then(response => {
-      console.log(response.data);
       setUser(response.data);
     });
   }, []);
+
+  const login = () => {
+    DataService.getCurrentUser().then(response => {
+      setUser(response.data);
+    });
+  };
 
   const logout = () => {
     DataService.logout();
     setUser(null);
     // On logout redirect to landingPage
-    navigate("/");
+    // navigate("/");
   };
 
   // To conditional render a component depending on if user's authenticated
@@ -50,6 +55,7 @@ const useProvideAuth = () => {
 
   return {
     user,
+    login,
     logout,
     isAuthenticated,
     isNot100Dever,
@@ -58,4 +64,4 @@ const useProvideAuth = () => {
   };
 };
 
-export default useProvideAuth;
+export default useAuth;

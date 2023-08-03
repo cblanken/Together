@@ -1,10 +1,10 @@
 import React from "react";
 //import { Context } from "contexts/Context";
-import { useAuthContext } from "contexts/AuthContext";
+import useAuth from "contexts/AuthContext";
 import togetherLogo from "../.././assets/images/togetherLogo.svg";
 
 const WelcomeUserModal = ({ handleClose }) => {
-  const auth = useAuthContext();
+  const auth = useAuth();
   return (
     <div className="flex flex-col items-center py-0 px-2rem rounded-xl bg-white pb-4">
       <button

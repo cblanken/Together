@@ -6,10 +6,10 @@ import {
   FaChevronCircleRight,
   FaRegCalendarAlt,
 } from "react-icons/fa";
-import { useAuthContext } from "contexts/AuthContext";
+import useAuth from "contexts/AuthContext";
 
 const NavContainer = () => {
-  const { isAuthenticated } = useAuthContext();
+  const { isAuthenticated } = useAuth();
 
   return (
     <nav className="hidden md:flex justify-between w-full">

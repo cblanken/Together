@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { useAuthContext } from "contexts/AuthContext";
+import useAuth from "contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 function HamburgerNav({ logo, logotext }) {
   const navigate = useNavigate();
-  const { isAuthenticated, logout } = useAuthContext();
+  const { isAuthenticated, logout } = useAuth();
 
   let Links = [
     { name: "HOME", link: "/", type: "button" },

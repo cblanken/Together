@@ -8,7 +8,7 @@ import { formatToLocalTime } from "utilities/calendar";
 import togetherLogo from "../.././assets/images/togetherLogo.svg";
 import { useModalContext } from "contexts/ModalContext";
 import dataService from "../../services/dataService";
-import { useAuthContext } from "contexts/AuthContext";
+import useAuth from "contexts/AuthContext";
 import { useEventsContext } from "contexts/EventsContext";
 
 const EventModal = () => {
@@ -16,7 +16,7 @@ const EventModal = () => {
   const modal = useModalContext();
   //grabs user compares user from context and event author
   //displays delete buttons if true
-  const { user } = useAuthContext();
+  const { user } = useAuth();
   const authorCheck = user && user?._id === modal.activeEvent.user?._id;
 
   return (

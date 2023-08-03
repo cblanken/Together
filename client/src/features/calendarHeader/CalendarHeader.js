@@ -8,14 +8,14 @@ import { FaHome, FaQuestion } from "react-icons/fa";
 import { RiArrowLeftCircleFill, RiArrowRightCircleFill } from "react-icons/ri";
 import MonthAndYear from "features/calendar/MonthAndYear";
 import Logo from "../../assets/images/togetherLogo.svg";
-import { useAuthContext } from "contexts/AuthContext";
+import useAuth from "contexts/AuthContext";
 import { useFormModalContext } from "contexts/FormModalContext";
 import { useNavigate } from "react-router-dom";
 
 function CalendarHeader({ date }) {
   const navigate = useNavigate();
   const formModal = useFormModalContext();
-  const { isAuthenticated, logout } = useAuthContext();
+  const { isAuthenticated, logout } = useAuth();
   const DISCORD_THREAD_URL =
     "discord://discord.com/channels/735923219315425401/1038482732633825442";
 

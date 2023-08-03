@@ -1,12 +1,12 @@
 import HamburgerNav from "./HamburgerNav";
 import { useRoutingContext } from "contexts/RoutingContext";
-import { useAuthContext } from "contexts/AuthContext";
+import useAuth from "contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 const NavButtons = ({ HomeIcon, LoginIcon, CalendarIcon }) => {
   const routing = useRoutingContext();
   const navigate = useNavigate();
-  const { isAuthenticated, logout } = useAuthContext();
+  const { isAuthenticated, logout } = useAuth();
 
   const handleLogin = () => {
     window.location = "/auth/discord";

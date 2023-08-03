@@ -1,9 +1,13 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import useAuth from "contexts/AuthContext";
 import "index.css";
 import DataService from "services/dataService";
 
 export const AdminDashboard = () => {
+  const navigate = useNavigate();
+  const auth = useAuth();
   const [allEvents, setAllEvents] = useState({});
   const [loading, setLoading] = useState(false);
 
@@ -14,8 +18,8 @@ export const AdminDashboard = () => {
     setLoading(false);
   };
 
-  // Load all events on initial page render
   useEffect(() => {
+    // Load all events on initial page render
     const fetch = async () => await handleGetAllEvents();
     fetch();
   }, []);

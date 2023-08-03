@@ -1,10 +1,10 @@
 import "../../index.css";
 import DiscordButton from "./DiscordButton";
-import { useAuthContext } from "contexts/AuthContext";
+import useAuth from "contexts/AuthContext";
 
 const LongCard = ({ heading, title, description, img }) => {
   // Access authentication context
-  const auth = useAuthContext();
+  const auth = useAuth();
   return (
     <section className="border-solid border-2 border-black rounded-2xl bg-secondary flex justify-center py-6 xl:py-14 w-full xl:gap-10">
       <div className="hidden lg:flex items-center justify-center">
